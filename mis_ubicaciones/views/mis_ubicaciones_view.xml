@@ -1,0 +1,88 @@
+<?xml version="1.0" ?>
+    <odoo>
+
+                  <!-- vista  tree -->
+       <record id="mis_ubicaciones_tree_view" model="ir.ui.view">
+            <field name="name">mis ubicaciones modulo tree</field>
+            <field name="model">mis.ubicaciones</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="tienda" optional="show"/>
+                    <field name="registro_federal" optional="hide"/>
+                    <field name="inicial_en_caja" optional="hide"/>
+                    <field name="ancho_reporte" optional="hide"/>
+                </tree>
+
+            </field>
+        </record>
+
+                    <!-- vista  form -->
+       <record id="mis_ubicaciones_form_view" model="ir.ui.view">
+            <field name="name">mis ubicaciones modulo</field>
+            <field name="model">mis.ubicaciones</field>
+            <field name="arch" type="xml">
+
+                <form string="mis ubicaciones">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="tienda"/>
+                                <field name="direccion"/>
+                                <field name="registro_federal"/>
+                                <field name="inicial_en_caja"/>
+                                <field name="ancho_ticket_ids"/>
+                                <field name="ancho_reporte"/>
+                                <field name="comision_credito"/>
+                                <field name="comision_debito"/>
+                            </group>
+
+                            <group>
+                                <field name="telefono"/>
+                                <field name="web_email"/>
+                                <field name="horario"/>
+                                <field name="encargado_ids"/>
+                                <field name="rfc"/>
+                                <field name="iva"/>
+                            </group>
+                        </group>
+                    </sheet>
+                  <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                  </div>
+                </form>
+
+
+            </field>
+        </record>
+
+                  <!-- vista  search -->
+       <record id="ayuda_search_view" model="ir.ui.view">
+           <field name="name">mis ubicaciones search view</field>
+           <field name="model">mis.ubicaciones</field>
+           <field name="arch" type="xml">
+
+               <search>
+                            <!-- busqueda rapida -->
+                   <field name="tienda" string="Tienda"/>
+                   <field name="registro_federal" string="Tienda"/>
+
+                                               <!-- filtro rapido -->
+                   <filter name="categoria_carta" string="Carta" domain="[('ancho_reporte' , '=', 'carta')]" />
+                   <filter name="categoria_oficio" string="Oficio" domain="[('ancho_reporte' , '=', 'oficio')]" />
+                   <filter name="categoria_dbcarta" string="Dbcarta" domain="[('ancho_reporte' , '=', 'dbcarta')]" />
+
+                               <!-- agrupacion rapida -->
+                   <group expand="0" string="Agrupar por" colspan="12" col="10">
+                       <filter name="temas" string="Encargado" context="{'group_by' : 'encargado_ids'}"/>
+                   </group>                                <!--palabra reserv. -->   <!-- campo -->
+
+
+               </search>
+
+           </field>
+       </record>
+
+    </odoo>

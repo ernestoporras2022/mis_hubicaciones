@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<odoo>
+
+    <record id="categoria_modulo_mis_ubicaciones" model="ir.module.category">
+        <field name="name">Mis ubicaciones</field>
+    </record>
+
+    <record id="mis_ubicaciones_group_user" model="res.groups">
+        <field name="name">Acceso a mis ubicaciones</field>
+        <field name="category_id" ref="categoria_modulo_mis_ubicaciones" />
+        <field name="implied_ids" eval="[(4,ref('base.group_user'))]"/>
+    </record>
+
+    <record id="ancho_ticket_group_user" model="res.groups">
+        <field name="name">Acceso a ancho ticket</field>
+        <field name="category_id" ref="categoria_modulo_mis_ubicaciones" />
+        <field name="implied_ids" eval="[(4,ref('base.group_user'))]"/>
+    </record>
+
+    <record id="encargado_group_user" model="res.groups">
+        <field name="name">Acceso a encargado</field>
+        <field name="category_id" ref="categoria_modulo_mis_ubicaciones" />
+        <field name="implied_ids" eval="[(4,ref('base.group_user'))]"/>
+    </record>
+
+</odoo>

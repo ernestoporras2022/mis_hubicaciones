@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+
+<odoo>
+
+    <record id="mis_ubicaciones_action" model="ir.actions.act_window">
+        <field name="name">Mis ubicaciones</field>
+        <field name="res_model">mis.ubicaciones</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="ancho_ticket_action" model="ir.actions.act_window">
+        <field name="name">Ancho ticket</field>
+        <field name="res_model">ancho.ticket</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="encargado_action" model="ir.actions.act_window">
+        <field name="name">Encargado</field>
+        <field name="res_model">nombre.encargado</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Mis ubicaciones" id="Mis_ubicaciones_menu"/>
+    <menuitem name="Mis ubicaciones" id="mis_ubicaciones" parent="Mis_ubicaciones_menu" action="mis_ubicaciones_action"/>
+    <menuitem name="Ancho ticket" id="ancho_ticket" parent="Mis_ubicaciones_menu" action="ancho_ticket_action"/>
+    <menuitem name="Encargado" id="encargado" parent="Mis_ubicaciones_menu" action="encargado_action"/>
+
+</odoo>

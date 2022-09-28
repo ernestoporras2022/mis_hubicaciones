@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mis_ubicaciones_user,Acceso a mis ubicaciones,model_mis_ubicaciones,mis_ubicaciones_group_user,1,1,1,1
+access_ancho_ticket_user,Acceso a ancho ticket,model_ancho_ticket,ancho_ticket_group_user,1,1,1,1
+encargado_ticket_user,Acceso a encargado,model_nombre_encargado,encargado_group_user,1,1,1,1
+
+
+
